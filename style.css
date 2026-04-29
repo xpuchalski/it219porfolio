@@ -113,9 +113,9 @@ body {
 
 .profile-layout {
   display: grid;
-  grid-template-columns: minmax(0, 760px) 240px;
+  grid-template-columns: minmax(0, 760px) minmax(240px, 300px);
   gap: 1.2rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .profile-layout .glass-panel {
@@ -125,12 +125,15 @@ body {
 .profile-photo-wrap {
   display: flex;
   justify-content: center;
+  height: 100%;
+  align-self: stretch;
 }
 
 .profile-photo {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
+  object-position: center center;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
@@ -351,9 +354,12 @@ a {
 
   .profile-photo-wrap {
     justify-content: flex-start;
+    height: auto;
+    align-self: auto;
   }
 
   .profile-photo {
+    height: auto;
     max-width: 220px;
   }
 

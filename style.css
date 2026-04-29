@@ -1,0 +1,364 @@
+:root {
+  --ink: #1f1a16;
+  --paper: #f5f1ea;
+  --paper-2: #e8decf;
+  --accent: #8a3a1f;
+  --accent-2: #2d5f4a;
+  --glass: rgba(17, 17, 17, 0.58);
+  --line: rgba(255, 255, 255, 0.36);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  color: var(--ink);
+  background: #000;
+}
+
+.presentation-main {
+  width: 100%;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  position: relative;
+}
+
+.slide.dark {
+  height: 200vh;
+  background: #000;
+}
+
+.slide.light {
+  height: 170vh;
+  background: var(--paper);
+}
+
+.slide-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.08);
+  filter: brightness(0.72) contrast(1.07) saturate(0.9);
+}
+
+.bg-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.66));
+}
+
+.hero-media {
+  background-image: url("https://source.unsplash.com/1920x1080/?newark,new-jersey,skyline");
+}
+
+.story-media {
+  background-image: url("https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=1800&q=80");
+  filter: brightness(0.68) contrast(1.06) saturate(0.9) blur(2.4px);
+}
+
+.code-media {
+  background-image: url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1800&q=80");
+}
+
+.final-media {
+  background-image: radial-gradient(circle at 20% 20%, #ca815f 0%, transparent 35%),
+    radial-gradient(circle at 80% 10%, #315e5d 0%, transparent 40%),
+    linear-gradient(135deg, #0f0f10 0%, #21120d 50%, #152723 100%);
+}
+
+.copy-frame {
+  width: min(96%, 1100px);
+  position: relative;
+  z-index: 5;
+}
+
+.glass-panel,
+.paper-panel {
+  width: min(92vw, 760px);
+  border-radius: 20px;
+  padding: clamp(1.25rem, 2vw, 2rem);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.glass-panel {
+  color: #fffdf8;
+  background: var(--glass);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--line);
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) 240px;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.profile-layout .glass-panel {
+  width: 100%;
+}
+
+.profile-photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+}
+
+.paper-panel {
+  color: var(--ink);
+  background: linear-gradient(180deg, #fffdf9 0%, #f8f3e8 100%);
+  border: 1px solid rgba(31, 26, 22, 0.12);
+}
+
+.paper-panel.compact {
+  width: min(92vw, 640px);
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Newsreader", serif;
+  line-height: 1.08;
+  margin: 0 0 1rem;
+}
+
+h1,
+h2 {
+  font-size: clamp(1.85rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+p,
+li,
+blockquote,
+a {
+  font-size: clamp(1rem, 1.3vw, 1.13rem);
+  line-height: 1.58;
+}
+
+.project-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.project-card {
+  padding: 1rem;
+  border-radius: 14px;
+  background: #fffdf8;
+  border: 1px solid rgba(31, 26, 22, 0.15);
+}
+
+.project-card a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.split-stage {
+  width: min(96%, 1200px);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1rem;
+}
+
+.split-media {
+  border-radius: 20px;
+  background: linear-gradient(140deg, rgba(138, 58, 31, 0.78), rgba(45, 95, 74, 0.84)),
+    url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80") center / cover;
+  min-height: 70vh;
+  box-shadow: 0 24px 60px rgba(31, 26, 22, 0.18);
+}
+
+.split-content {
+  display: flex;
+  align-items: center;
+}
+
+.timeline ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.quotes blockquote {
+  margin: 0.9rem 0;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.8rem;
+  font-style: italic;
+}
+
+.cta-row {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.72rem 1rem;
+  font-weight: 700;
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--accent);
+}
+
+.btn-secondary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.progress-rail {
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+}
+
+.progress-count {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.84rem;
+  background: rgba(0, 0, 0, 0.54);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  padding: 0.4rem 0.7rem;
+}
+
+.dot-track {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.dot.active {
+  background: #fff;
+  transform: scale(1.25);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(34px) scale(0.97);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (max-width: 900px) {
+  .progress-rail {
+    right: 0.5rem;
+  }
+
+  .split-stage {
+    grid-template-columns: 1fr;
+    width: min(94%, 900px);
+  }
+
+  .split-media {
+    min-height: 35vh;
+  }
+
+  .glass-panel,
+  .paper-panel {
+    width: 100%;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo-wrap {
+    justify-content: flex-start;
+  }
+
+  .profile-photo {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .progress-rail {
+    top: auto;
+    bottom: 0.5rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    grid-template-columns: auto auto;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    padding: 0.45rem 0.7rem;
+  }
+
+  .dot-track {
+    display: flex;
+    gap: 0.35rem;
+  }
+}

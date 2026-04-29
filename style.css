@@ -72,7 +72,7 @@ body {
 }
 
 .hero-media {
-  background-image: url("https://source.unsplash.com/1920x1080/?newark,new-jersey,skyline");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/01/NewarkNJ_7_2010.JPG");
 }
 
 .story-media {
@@ -144,6 +144,21 @@ body {
 
 .paper-panel.compact {
   width: min(92vw, 640px);
+}
+
+.scroll-panel {
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  padding-right: clamp(0.9rem, 1.2vw, 1.1rem);
+}
+
+.scroll-panel::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb {
+  background: rgba(31, 26, 22, 0.28);
+  border-radius: 999px;
 }
 
 .eyebrow {
@@ -340,6 +355,12 @@ a {
 
   .profile-photo {
     max-width: 220px;
+  }
+
+  .scroll-panel {
+    max-height: none;
+    overflow: visible;
+    padding-right: clamp(1.25rem, 2vw, 2rem);
   }
 }
 
